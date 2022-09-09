@@ -9,6 +9,7 @@ require "user.treesitter"
 require "user.autopair"
 require "user.comment"
 require "user.gitsigns"
+require "user.nvim-tree"
 
 function _G.ReloadConfig()
   for name,_ in pairs(package.loaded) do

@@ -26,7 +26,7 @@ vim.api.nvim_set_keymap('n', '<Leader>vs', '<Cmd>lua ReloadConfig()<CR>',opts)
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
 
 -- better explorer size
-keymap("n", "<leader>e", ":Lexplore 30<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- clear search
 keymap("n", "<leader>/", ":noh<CR>", opts)
