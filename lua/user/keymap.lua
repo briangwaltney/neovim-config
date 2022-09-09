@@ -20,6 +20,7 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 keymap("n", "<ESC>", "<ESC>:w<CR>", opts)
+
 -- Reload vim after config change
 vim.api.nvim_set_keymap('n', '<Leader>vs', '<Cmd>lua ReloadConfig()<CR>',opts)
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
@@ -46,9 +47,18 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
+
+-- Telescope
+keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
+keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
+
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+keymap("i", "jk", "<ESC>", opts)
+keymap("i", "kj", "<ESC>", opts)
+keymap("i", "jj", "<ESC>", opts)
+keymap("i", "kk", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode

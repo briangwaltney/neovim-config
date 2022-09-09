@@ -8,3 +8,4 @@ end
 
 vim.cmd "hi LineNr guifg=#CBCCC6"
 vim.cmd "hi Comment guifg=#C5D9FF"
+vim.cmd "hi Visual guibg=#1c547d"

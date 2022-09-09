@@ -65,6 +65,31 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
+  -- Telescope
+  use "nvim-telescope/telescope.nvim"
+  use 'nvim-telescope/telescope-media-files.nvim'
+
+  -- Harpoon
+  use 'ThePrimeagen/harpoon'
+
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+  use "p00f/nvim-ts-rainbow"
+  use "nvim-treesitter/playground"
+
+  --autopairs
+  use "windwp/nvim-autopairs"
+
+  --comments
+  use "numToStr/Comment.nvim" -- Easily comment stuff
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
+
+-- Git
+  use "lewis6991/gitsigns.nvim"
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
