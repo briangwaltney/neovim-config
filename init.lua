@@ -10,6 +10,14 @@ require "user.autopair"
 require "user.comment"
 require "user.gitsigns"
 require "user.nvim-tree"
+require "user.bufferline"
+require "user.null-ls"
+require "user.prettier"
+require "user.vim"
+
+
+
+
 
 function _G.ReloadConfig()
   for name,_ in pairs(package.loaded) do

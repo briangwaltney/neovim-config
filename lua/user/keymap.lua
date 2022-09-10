@@ -20,6 +20,8 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 keymap("n", "<ESC>", "<ESC>:w<CR>", opts)
+keymap("n", "<leader>w", ":bd<CR>", opts)
+keymap("n", "0", "^", opts)
 
 -- Reload vim after config change
 vim.api.nvim_set_keymap('n', '<Leader>vs', '<Cmd>lua ReloadConfig()<CR>',opts)
@@ -51,6 +53,9 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
+
+                keymap("n", "==", ":CocCommand prettier.formatFile<CR><ESC>", opts)
+
 
 -- Insert --
 -- Press jk fast to enter
