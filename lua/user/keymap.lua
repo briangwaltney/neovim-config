@@ -53,8 +53,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
-
-                keymap("n", "==", ":CocCommand prettier.formatFile<CR><ESC>", opts)
+keymap("n", "==", ":CocCommand prettier.formatFile<CR><ESC>", opts)
 
 
 -- Insert --
@@ -66,6 +65,9 @@ keymap("i", "jj", "<ESC>", opts)
 keymap("i", "kk", "<ESC>", opts)
 
 -- Visual --
+-- Fold
+keymap("v", "<leader>fl", ":'<,'>fold<CR>", opts)
+
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
