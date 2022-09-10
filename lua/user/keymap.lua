@@ -19,6 +19,7 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Normal --
+keymap("n", "<leader>'", ":TSHighlightCapturesUnderCursor<CR>", opts)
 keymap("n", "<ESC>", "<ESC>:w<CR>", opts)
 keymap("n", "<leader>w", ":bd<CR>", opts)
 keymap("n", "0", "^", opts)

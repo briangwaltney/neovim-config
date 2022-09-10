@@ -10,26 +10,37 @@ end
 vim.cmd "hi LineNr guifg=#FFCC66"
 vim.cmd "hi LineNrAbove guifg=#CBCCC6"
 vim.cmd "hi LineNrBelow guifg=#CBCCC6"
-vim.cmd "hi Comment guifg=#8f9dac"
-vim.cmd "hi Visual guibg=#1c547d"
+vim.cmd "hi Comment guifg=#8f9dac gui=italic"
 vim.cmd "hi CocUnusedHighlight guibg=#1F2430"
 vim.cmd "hi NonText guifg=#FFFFFF"
-vim.cmd "hi SpecialKey guifg=#FFFFFF"
-vim.cmd "hi Identifier guifg=#FFAD66"
---[[ vim.cmd "hi typescriptVariableDeclaration guifg=#FFD173" ]]
---[[ vim.cmd "hi Statement guifg=#DFBFFF" ]]
---[[ vim.cmd "hi typescriptObjectLiteral guifg=#73d0ff" ]]
+vim.cmd "hi SpecialKey guifg=#8f9dac"
+vim.cmd "hi typescriptVariable guifg=#FFAD66"
+vim.cmd "hi typescriptMember guifg=fg"
+vim.cmd "hi typescriptBinaryOp guifg=#F29E74"
+vim.cmd "hi typescriptUnaryOp guifg=#F29E74"
+vim.cmd "hi typescriptDotNotation guifg=#F29E74"
+vim.cmd "hi typescriptTypeAnnotation guifg=#F29E74"
+vim.cmd "hi typescriptFuncType guifg=#DFBFFF"
+vim.cmd "hi typescriptObjectLabel guifg=fg"
+vim.cmd "hi typescriptFuncCallArg guifg=#DFBFFF"
+vim.cmd "hi tsxTag guifg=#73D0FF"  -- Blue
+vim.cmd "hi tsxTagName guifg=#73D0FF"  -- Blue
+vim.cmd "hi tsxAttrib guifg=#FFD173"
+vim.cmd "hi typescriptIdentifierName guifg=#DFBFFF"
+vim.cmd "hi tsxIntrinsicTagName guifg=#73D0FF"
+vim.cmd "hi tsxCloseTag guifg=#73D0FF"
+vim.cmd "hi MatchParen guifg=bg guibg=#F29E74"
 vim.cmd "hi Search guibg=#1f2430 guifg=#d41083"
---[[ vim.cmd "hi typescriptFuncCallArg guifg=#DFBFFF" ]]
+--[[ vim.cmd "hi SpellBad gui=underline guifg=#FFA759" ]]
 
---[[ accent = "#FFCC66", ]]
---[[   bg = "#1F2430", ]]
+--[[ accent = "#FFCC66", yellow ]]
+--[[   bg = "#1F2430", dark grey ]]
 --[[   black = "#000000", ]]
---[[   comment = "#5C6773", ]]
+--[[   comment = "#8f9dac",light grey ]]
 --[[   constant = "#D4BFFF", ]]
 --[[   entity = "#73D0FF", ]]
 --[[   error = "#FF3333", ]]
---[[   fg = "#CBCCC6", ]]
+--[[   fg = "#CBCCC6",almost white ]]
 --[[   fg_idle = "#607080", ]]
 --[[   func = "#FFD580", ]]
 --[[   generate = <function 1>, ]]

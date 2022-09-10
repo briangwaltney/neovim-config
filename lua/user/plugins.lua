@@ -91,11 +91,11 @@ return packer.startup(function(use)
   -- Git
   use "lewis6991/gitsigns.nvim"
 
-  -- nvim tree 
+  -- nvim tree
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
 
-  -- bufferline 
+  -- bufferline
 
   use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"

@@ -2,11 +2,11 @@ require "user.options"
 require "user.keymap"
 require "user.colorscheme"
 require "user.plugins"
-require "user.cmp"
+--[[ require "user.cmp" ]]
 require "user.lsp"
 require "user.telescope"
 require "user.autopair"
-require "user.comment" 
+require "user.comment"
 require "user.gitsigns"
 require "user.nvim-tree"
 require "user.bufferline"
@@ -15,6 +15,7 @@ require "user.prettier"
 require "user.coc"
 require "user.treesitter"
 require "user.lualine"
+require "user.autocommands"
 
 
 function _G.ReloadConfig()
