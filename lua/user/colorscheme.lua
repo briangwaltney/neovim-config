@@ -14,6 +14,7 @@ vim.cmd "hi Comment guifg=#8f9dac gui=italic"
 vim.cmd "hi CocUnusedHighlight guibg=#1F2430"
 vim.cmd "hi NonText guifg=#FFFFFF"
 vim.cmd "hi SpecialKey guifg=#8f9dac"
+vim.cmd "hi Folded guifg=#DFBFFF"
 --[[ vim.cmd "hi typescriptVariable guifg=#FFAD66" ]]
 --[[ vim.cmd "hi typescriptMember guifg=fg" ]]
 --[[ vim.cmd "hi typescriptBinaryOp guifg=#F29E74" ]]

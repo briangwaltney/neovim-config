@@ -23,5 +23,36 @@ nvim_tree.setup {
       },
     },
   },
- }
+  diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        debounce_delay = 50,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        },
+      },
+  renderer = {
+        add_trailing = false,
+        group_empty = false,
+        highlight_git = false,
+        full_name = false,
+        highlight_opened_files = "none",
+        root_folder_modifier = ":~",
+        indent_width = 2,
+        indent_markers = {
+          enable = true,
+          inline_arrows = true,
+          icons = {
+            corner = "└",
+            edge = "│",
+            item = "│",
+            bottom = "─",
+            none = " ",
+          },
+        } }
+
+      }
 

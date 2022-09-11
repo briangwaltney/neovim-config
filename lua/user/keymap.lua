@@ -23,15 +23,16 @@ keymap("n", "<leader>'", ":TSHighlightCapturesUnderCursor<CR>", opts)
 keymap("n", "<ESC>", "<ESC>:w<CR>", opts)
 keymap("n", "<leader>w", ":bd<CR>", opts)
 keymap("n", "0", "^", opts)
+keymap("n", "<leader>K", "<C-w>w", opts)
 
 -- Harpoontang
 keymap("n", "<leader>0", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 keymap("n", "<leader>9", ":lua require('harpoon.mark').add_file()<CR>", opts)
 
-keymap("n", "<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
-keymap("n", "<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
-keymap("n", "<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
-keymap("n", "<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
+keymap("n", "<F1>", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
+keymap("n", "<F2>", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
+keymap("n", "<F3>", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
+keymap("n", "<F4>", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
 
 -- Reload vim after config change
 vim.api.nvim_set_keymap('n', '<Leader>vs', '<Cmd>lua ReloadConfig()<CR>',opts)
@@ -63,7 +64,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
-keymap("n", "==", ":CocCommand prettier.formatFile<CR><ESC>", opts)
+keymap("n", "==", ":CocCommand prettier.formatFile<CR>:w<CR><ESC>", opts)
 
 
 -- Insert --
