@@ -24,6 +24,15 @@ keymap("n", "<ESC>", "<ESC>:w<CR>", opts)
 keymap("n", "<leader>w", ":bd<CR>", opts)
 keymap("n", "0", "^", opts)
 
+-- Harpoontang
+keymap("n", "<leader>0", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>9", ":lua require('harpoon.mark').add_file()<CR>", opts)
+
+keymap("n", "<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
+keymap("n", "<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
+keymap("n", "<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
+keymap("n", "<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
+
 -- Reload vim after config change
 vim.api.nvim_set_keymap('n', '<Leader>vs', '<Cmd>lua ReloadConfig()<CR>',opts)
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
