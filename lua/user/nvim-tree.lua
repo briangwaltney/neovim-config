@@ -14,7 +14,9 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
+
   view = {
+
     mappings = {
       list = {
         { key = { "l", "<CR>", "o" }, cb = tree_cb "edit" },
@@ -52,7 +54,11 @@ nvim_tree.setup {
             bottom = "─",
             none = " ",
           },
-        } }
+        } },
+
+    update_focused_file = {
+      enable= true
+    }
 
       }
 

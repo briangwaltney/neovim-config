@@ -15,22 +15,15 @@ vim.cmd "hi CocUnusedHighlight guibg=#1F2430"
 vim.cmd "hi NonText guifg=#FFFFFF"
 vim.cmd "hi SpecialKey guifg=#8f9dac"
 vim.cmd "hi Folded guifg=#DFBFFF"
---[[ vim.cmd "hi typescriptVariable guifg=#FFAD66" ]]
---[[ vim.cmd "hi typescriptMember guifg=fg" ]]
---[[ vim.cmd "hi typescriptBinaryOp guifg=#F29E74" ]]
---[[ vim.cmd "hi typescriptUnaryOp guifg=#F29E74" ]]
---[[ vim.cmd "hi typescriptDotNotation guifg=#F29E74" ]]
---[[ vim.cmd "hi typescriptTypeAnnotation guifg=#F29E74" ]]
---[[ vim.cmd "hi typescriptFuncType guifg=#DFBFFF" ]]
---[[ vim.cmd "hi typescriptObjectLabel guifg=fg" ]]
---[[ vim.cmd "hi typescriptFuncCallArg guifg=#DFBFFF" ]]
---[[ vim.cmd "hi typescriptArrowFunc guifg=#F29E74" ]]
---[[ vim.cmd "hi tsxTag guifg=#73D0FF"  -- Blue ]]
---[[ vim.cmd "hi tsxTagName guifg=#73D0FF"  -- Blue ]]
---[[ vim.cmd "hi tsxAttrib guifg=#FFD173" ]]
---[[ vim.cmd "hi typescriptIdentifierName guifg=#DFBFFF" ]]
---[[ vim.cmd "hi tsxIntrinsicTagName guifg=#73D0FF" ]]
---[[ vim.cmd "hi tsxCloseTag guifg=#73D0FF" ]]
+vim.cmd "hi @tag.attribute guifg=#FFCC66"
+vim.cmd "hi @tag guifg=#73D0FF"
+vim.cmd "hi @constructor guifg=#73D0FF"
+vim.cmd "hi @tag.delimiter guifg=#73D0FF"
+vim.cmd "hi @type guifg=#FF785A"
+vim.cmd "hi @type.builtin guifg=#FF785A"
+vim.cmd "hi @parameter guifg=#DFBFFF"
+--[[ vim.cmd "hi @property guifg=fg" ]]
+
 vim.cmd "hi MatchParen guibg=#000000"
 --[[ vim.cmd "hi Search guibg=#1f2430 guifg=#d41083" ]]
 --[[ vim.cmd "hi SpellBad gui=underline guifg=#FFA759" ]]
@@ -42,4 +35,4 @@ vim.cmd "hi MatchParen guibg=#000000"
 -- purple = DFBFFF
 -- orange = F29E74
 -- yellow = FFCC66
-
+-- red = FF785A

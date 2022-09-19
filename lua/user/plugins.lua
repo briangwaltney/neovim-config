@@ -61,8 +61,6 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  -- vim b good
-  use "ThePrimeagen/vim-be-good"
 
     -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -82,6 +80,7 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
+  use "nvim-treesitter/nvim-treesitter-context"
 
   --autopairs
   use "windwp/nvim-autopairs"
@@ -103,11 +102,17 @@ return packer.startup(function(use)
   use "moll/vim-bbye"
 
   -- prettier
-    use('jose-elias-alvarez/null-ls.nvim')
-    use('MunifTanjim/prettier.nvim')
+  use('jose-elias-alvarez/null-ls.nvim')
+  use('MunifTanjim/prettier.nvim')
 
-    -- lualine
-    use('nvim-lualine/lualine.nvim')
+  -- lualine
+  use('nvim-lualine/lualine.nvim')
+
+  -- Undotree
+  use('mbbill/undotree')
+
+  -- Markdown
+  use('ixru/nvim-markdown')
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -1,6 +1,5 @@
 require "user.options"
 require "user.keymap"
-require "user.colorscheme"
 require "user.plugins"
 --[[ require "user.cmp" ]]
 --[[ require "user.lsp" ]]
@@ -16,6 +15,7 @@ require "user.coc"
 require "user.treesitter"
 require "user.lualine"
 require "user.autocommands"
+require "user.colorscheme"
 
 
 function _G.ReloadConfig()

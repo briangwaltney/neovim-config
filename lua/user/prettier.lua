@@ -16,6 +16,7 @@ prettier.setup({
     "typescriptreact",
     "yaml",
     "lua",
-    "prisma"
+    "prisma",
+    "MD"
   },
 })
