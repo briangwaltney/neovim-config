@@ -1,8 +1,8 @@
 require "user.options"
 require "user.keymap"
 require "user.plugins"
---[[ require "user.cmp" ]]
---[[ require "user.lsp" ]]
+require "user.cmp"
+require "user.lsp"
 require "user.telescope"
 require "user.autopair"
 require "user.comment"
@@ -11,7 +11,7 @@ require "user.nvim-tree"
 require "user.bufferline"
 require "user.null-ls"
 require "user.prettier"
-require "user.coc"
+--[[ require "user.coc" ]]
 require "user.treesitter"
 require "user.lualine"
 require "user.autocommands"
