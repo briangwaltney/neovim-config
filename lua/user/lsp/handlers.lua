@@ -15,7 +15,7 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    --[[ virtual_text = true, ]]
+    virtual_text = false,
     -- show signs
     signs = {
       active = signs,
@@ -23,15 +23,15 @@ M.setup = function()
     update_in_insert = true,
     underline = true,
     severity_sort = true,
-    float = false
-    --[[ float = { ]]
-    --[[   focusable = true, ]]
-    --[[   style = "minimal", ]]
-    --[[   border = "rounded", ]]
-    --[[   source = "always", ]]
-    --[[   header = "", ]]
-    --[[   prefix = "", ]]
-    --[[ }, ]]
+    --[[ float = false ]]
+    float = {
+      focusable = true,
+      style = "minimal",
+      border = "rounded",
+      source = "always",
+      header = "",
+      prefix = "",
+    },
   }
   vim.diagnostic.config(config)
 
@@ -70,7 +70,7 @@ local function lsp_keymaps(bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
   vim.api.nvim_buf_set_keymap(
     bufnr,

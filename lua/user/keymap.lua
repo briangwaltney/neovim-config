@@ -70,7 +70,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
-keymap("n", "==", ":CocCommand prettier.formatFile<CR>:w<CR>", opts)
+keymap("n", "==", ":Prettier<CR>", opts)
 
 
 -- Insert --

@@ -17,6 +17,5 @@ prettier.setup({
     "yaml",
     "lua",
     "prisma",
-    "MD"
   },
 })
