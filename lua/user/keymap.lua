@@ -42,7 +42,7 @@ keymap("n", "<leader>U", ":UndotreeToggle<CR>", opts)
 
 -- Reload vim after config change
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
-keymap('n', '<Leader>v', '<Cmd>lua ReloadConfig()<CR>',opts)
+keymap('n', '<Leader>v', '<Cmd>lua ReloadConfig()<CR>', opts)
 
 -- better explorer size
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -70,7 +70,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
-keymap("n", "==", ":Prettier<CR>", opts)
+keymap("n", "==", ":Format<CR>", opts)
 
 
 -- Insert --
