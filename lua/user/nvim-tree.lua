@@ -14,52 +14,51 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
-
+  remove_keymaps = { "c" },
   view = {
 
     mappings = {
       list = {
         { key = { "n", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "c", cb = tree_cb "edit" },
         { key = "h", cb = tree_cb "close_node" },
         { key = "v", cb = tree_cb "vsplit" },
       },
     },
   },
   diagnostics = {
-        enable = true,
-        show_on_dirs = true,
-        debounce_delay = 50,
-        icons = {
-          hint = "",
-          info = "",
-          warning = "",
-          error = "",
-        },
-      },
+    enable = true,
+    show_on_dirs = true,
+    debounce_delay = 50,
+    icons = {
+      hint = "",
+      info = "",
+      warning = "",
+      error = "",
+    },
+  },
   renderer = {
-        add_trailing = false,
-        group_empty = false,
-        highlight_git = false,
-        full_name = false,
-        highlight_opened_files = "none",
-        root_folder_modifier = ":~",
-        indent_width = 2,
-        indent_markers = {
-          enable = true,
-          inline_arrows = true,
-          icons = {
-            corner = "└",
-            edge = "│",
-            item = "│",
-            bottom = "─",
-            none = " ",
-          },
-        } },
-
-    update_focused_file = {
-      enable= true
+    add_trailing = false,
+    group_empty = false,
+    highlight_git = false,
+    full_name = false,
+    highlight_opened_files = "none",
+    root_folder_modifier = ":~",
+    indent_width = 2,
+    indent_markers = {
+      enable = true,
+      inline_arrows = true,
+      icons = {
+        corner = "└",
+        edge = "│",
+        item = "│",
+        bottom = "─",
+        none = " ",
+      },
     }
+  },
 
-      }
+  update_focused_file = {
+    enable = true
+  }
 
+}
