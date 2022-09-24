@@ -26,8 +26,8 @@ keymap("n", "0", "^", opts)
 keymap("n", "<leader>K", "<C-w>w", opts)
 
 -- Harpoontang
-keymap("n", "<leader>0", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
-keymap("n", "<leader>9", ":lua require('harpoon.mark').add_file()<CR>", opts)
+keymap("n", "<leader>*", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>]", ":lua require('harpoon.mark').add_file()<CR>", opts)
 keymap("n", "<F1>", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<F2>", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
 keymap("n", "<F3>", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
@@ -40,9 +40,27 @@ keymap("n", "<F7>", ":lua require('harpoon.ui').nav_file(7)<CR>", opts)
 keymap("n", "<leader>U", ":UndotreeToggle<CR>", opts)
 
 
+-- Dvorak improvements
+
+
+keymap("x", "t", "j", opts)
+keymap("x", "c", "k", opts)
+keymap("x", "n", "l", opts)
+keymap("v", "t", "j", opts)
+keymap("v", "c", "k", opts)
+keymap("v", "n", "l", opts)
+keymap("n", "t", "j", opts)
+keymap("n", "c", "k", opts)
+keymap("n", "n", "l", opts)
+
+
+keymap("n", "j", "t", opts)
+keymap("n", "k", "c", opts)
+keymap("n", "l", "n", opts)
+
 -- Reload vim after config change
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
-keymap('n', '<Leader>v', '<Cmd>lua ReloadConfig()<CR>', opts)
+keymap('n', '<Leader>@', '<Cmd>lua ReloadConfig()<CR>', opts)
 
 -- better explorer size
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -63,7 +81,7 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-n>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 
