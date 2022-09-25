@@ -10,16 +10,16 @@ configs.setup {
     additional_vim_regex_highlighting = true,
 
   },
-  --[[ rainbow={ ]]
-  --[[   enable = true, ]]
-  --[[   extended_mode = false, ]]
-  --[[   max_file_lines = nil, ]]
-  --[[   colors = { ]]
-  --[[     '#3cb6f4', ]]
-  --[[     '#c284ff', ]]
-  --[[     '#f17f46', ]]
-  --[[   } ]]
-  --[[ }, ]]
+  rainbow={
+    enable = true,
+    --[[ extended_mode = false, ]]
+    --[[ max_file_lines = nil, ]]
+    --[[ colors = { ]]
+    --[[   '#3cb6f4', ]]
+    --[[   '#c284ff', ]]
+    --[[   '#f17f46', ]]
+    --[[ } ]]
+  },
   context_commentstring = {
     enable = true,
     enable_autocmd = false,

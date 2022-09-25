@@ -82,6 +82,7 @@ return packer.startup(function(use)
   use "nvim-treesitter/playground"
   use "nvim-treesitter/nvim-treesitter-context"
 
+
   --autopairs
   use "windwp/nvim-autopairs"
 

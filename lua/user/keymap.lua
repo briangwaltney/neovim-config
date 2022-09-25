@@ -52,11 +52,24 @@ keymap("v", "n", "l", opts)
 keymap("n", "t", "j", opts)
 keymap("n", "c", "k", opts)
 keymap("n", "n", "l", opts)
+keymap("n", "<S-l>", "<S-n>", opts)
 
 
 keymap("n", "j", "t", opts)
 keymap("n", "k", "c", opts)
 keymap("n", "l", "n", opts)
+keymap("v", "j", "t", opts)
+keymap("v", "k", "c", opts)
+keymap("v", "l", "n", opts)
+keymap("x", "j", "t", opts)
+keymap("x", "k", "c", opts)
+keymap("x", "l", "n", opts)
+
+
+keymap("n", "kj", "ct", opts)
+keymap("n", "kk", "cc", opts)
+keymap("n", "ka", "ca", opts)
+keymap("n", "kp", "cp", opts)
 
 -- Reload vim after config change
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
@@ -88,16 +101,10 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
-keymap("n", "==", ":Format<CR>", opts)
+keymap("n", "==", ":Prettier<CR>", opts)
 
 
 -- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "jk", "<ESC>", opts)
-keymap("i", "kj", "<ESC>", opts)
-keymap("i", "jj", "<ESC>", opts)
-keymap("i", "kk", "<ESC>", opts)
 
 -- Visual --
 -- Fold
