@@ -12,7 +12,7 @@ configs.setup {
   },
   rainbow={
     enable = true,
-    --[[ extended_mode = false, ]]
+    extended_mode = false,
     --[[ max_file_lines = nil, ]]
     --[[ colors = { ]]
     --[[   '#3cb6f4', ]]

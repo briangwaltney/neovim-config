@@ -47,8 +47,10 @@ return packer.startup(function(use)
   --[[ use {'neoclide/coc.nvim', branch = 'release'} ]]
   -- Color Scheme
   use "Shatur/neovim-ayu"
+  use("catppuccin/nvim")
+  use 'norcalli/nvim-colorizer.lua'
 
--- cmp plugins
+  -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
@@ -62,7 +64,7 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
 
-    -- LSP
+  -- LSP
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
 
@@ -120,6 +122,4 @@ return packer.startup(function(use)
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
-end )
-
-
+end)

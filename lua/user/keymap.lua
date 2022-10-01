@@ -26,8 +26,8 @@ keymap("n", "0", "^", opts)
 keymap("n", "<leader>K", "<C-w>w", opts)
 
 -- Harpoontang
-keymap("n", "<leader>*", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
-keymap("n", "<leader>]", ":lua require('harpoon.mark').add_file()<CR>", opts)
+keymap("n", "<leader>]", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>}", ":lua require('harpoon.mark').add_file()<CR>", opts)
 keymap("n", "<F1>", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<F2>", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
 keymap("n", "<F3>", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
@@ -70,6 +70,7 @@ keymap("n", "kj", "ct", opts)
 keymap("n", "kk", "cc", opts)
 keymap("n", "ka", "ca", opts)
 keymap("n", "kp", "cp", opts)
+keymap("n", "<s-k>", "<s-c>", opts)
 
 -- Reload vim after config change
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
@@ -101,7 +102,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
-keymap("n", "==", ":Prettier<CR>", opts)
+keymap("n", "||", ":Format<CR>", opts)
+keymap("n", "<leader>||", ":Prettier<CR>", opts)
 
 
 -- Insert --
