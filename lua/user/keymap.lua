@@ -23,11 +23,10 @@ keymap("n", "<leader>'", ":TSHighlightCapturesUnderCursor<CR>", opts)
 keymap("n", "<ESC>", "<ESC>:w<CR>", opts)
 keymap("n", "<leader>w", ":bd<CR>", opts)
 keymap("n", "0", "^", opts)
-keymap("n", "<leader>K", "<C-w>w", opts)
 
 -- Harpoontang
-keymap("n", "<leader>]", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
-keymap("n", "<leader>}", ":lua require('harpoon.mark').add_file()<CR>", opts)
+keymap("n", "<leader>0", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>9", ":lua require('harpoon.mark').add_file()<CR>", opts)
 keymap("n", "<F1>", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<F2>", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
 keymap("n", "<F3>", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
@@ -40,37 +39,61 @@ keymap("n", "<F7>", ":lua require('harpoon.ui').nav_file(7)<CR>", opts)
 keymap("n", "<leader>U", ":UndotreeToggle<CR>", opts)
 
 
+-- RSTD
+
+keymap("n", "f", "u", opts)
+keymap("n", "u", "a", opts)
+keymap("n", "U", "A", opts)
+keymap("n", "l", "i", opts)
+keymap("n", "L", "I", opts)
+keymap("x", "a", "j", opts)
+keymap("x", "i", "k", opts)
+keymap("x", "e", "l", opts)
+keymap("x", "n", "h", opts)
+keymap("v", "a", "j", opts)
+keymap("v", "i", "k", opts)
+keymap("v", "e", "l", opts)
+keymap("v", "n", "h", opts)
+keymap("n", "a", "j", opts)
+keymap("n", "i", "k", opts)
+keymap("n", "e", "l", opts)
+keymap("n", "n", "h", opts)
+
+
+keymap("n", "m", "n", opts)
+keymap("n", "M", "N", opts)
+
+
+
 -- Dvorak improvements
 
 
-keymap("x", "t", "j", opts)
-keymap("x", "c", "k", opts)
-keymap("x", "n", "l", opts)
-keymap("v", "t", "j", opts)
-keymap("v", "c", "k", opts)
-keymap("v", "n", "l", opts)
-keymap("n", "t", "j", opts)
-keymap("n", "c", "k", opts)
-keymap("n", "n", "l", opts)
-keymap("n", "<S-l>", "<S-n>", opts)
-
-
-keymap("n", "j", "t", opts)
-keymap("n", "k", "c", opts)
-keymap("n", "l", "n", opts)
-keymap("v", "j", "t", opts)
-keymap("v", "k", "c", opts)
-keymap("v", "l", "n", opts)
-keymap("x", "j", "t", opts)
-keymap("x", "k", "c", opts)
-keymap("x", "l", "n", opts)
-
-
-keymap("n", "kj", "ct", opts)
-keymap("n", "kk", "cc", opts)
-keymap("n", "ka", "ca", opts)
-keymap("n", "kp", "cp", opts)
-keymap("n", "<s-k>", "<s-c>", opts)
+--[[ keymap("x", "t", "j", opts) ]]
+--[[  keymap("x", "c", "k", opts) ]]
+--[[  keymap("x", "n", "l", opts) ]]
+--[[  keymap("v", "t", "j", opts) ]]
+--[[  keymap("v", "c", "k", opts) ]]
+--[[  keymap("v", "n", "l", opts) ]]
+--[[  keymap("n", "t", "j", opts) ]]
+--[[  keymap("n", "c", "k", opts) ]]
+--[[  keymap("n", "n", "l", opts) ]]
+--[[  keymap("n", "<S-l>", "<S-n>", opts) ]]
+--[[]]
+--[[ keymap("n", "j", "t", opts) ]]
+--[[ keymap("n", "k", "c", opts) ]]
+--[[ keymap("n", "l", "n", opts) ]]
+--[[ keymap("v", "j", "t", opts) ]]
+--[[ keymap("v", "k", "c", opts) ]]
+--[[ keymap("v", "l", "n", opts) ]]
+--[[ keymap("x", "j", "t", opts) ]]
+--[[ keymap("x", "k", "c", opts) ]]
+--[[ keymap("x", "l", "n", opts) ]]
+--[[]]
+--[[ keymap("n", "kj", "ct", opts) ]]
+--[[ keymap("n", "kk", "cc", opts) ]]
+--[[ keymap("n", "ka", "ca", opts) ]]
+--[[ keymap("n", "kp", "cp", opts) ]]
+--[[ keymap("n", "<s-k>", "<s-c>", opts) ]]
 
 -- Reload vim after config change
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
@@ -95,15 +118,15 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-n>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-e>", ":bnext<CR>", opts)
+keymap("n", "<S-n>", ":bprevious<CR>", opts)
 
 
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
-keymap("n", "||", ":Format<CR>", opts)
-keymap("n", "<leader>||", ":Prettier<CR>", opts)
+keymap("n", "==", ":Format<CR>", opts)
+keymap("n", "<leader>==", ":Prettier<CR>", opts)
 
 
 -- Insert --
@@ -119,7 +142,6 @@ keymap("v", ">", ">gv", opts)
 -- Move text up and down
 --[[ keymap("v", "<A-j>", ":m .+1<CR>==", opts) ]]
 --[[ keymap("v", "<A-k>", ":m .-2<CR>==", opts) ]]
-keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down

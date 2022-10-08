@@ -43,34 +43,56 @@ catppuccin.setup({
   color_overrides = {
     latte = {
       rosewater = "#F5E0DC",
-      flamingo = "#F2CDCD",
-      pink = "#F5C2E7",
-      mauve = "#E28A7F", -- const import
-      red = "#F38BA8", -- props
-      maroon = "#EBA0AC",
-      peach = "#FAB387", -- null undefined
-      yellow = "#F9E2AF", -- types
-      green = "#A6E3A1", -- strings
-      teal = "#94E2D5", -- props
-      sky = "#89DCEB",
-      sapphire = "#74C7EC",
-      blue = "#89B4FA", -- function calls
-      lavender = "#B4BEFE", -- parens
 
-      text = "#CDD6F4",
+      flamingo = "#c490ff",
+
+      pink = "#F5C2E7",
+
+      mauve = "#ffb578",
+
+      red = "#ff785a",
+
+      maroon = "#EBA0AC",
+
+      peach = "#FAB387",
+
+      yellow = "#ffde86",
+
+      green = "#bae67e",
+
+      teal = "#89dceb",
+
+      sky = "#89DCEB",
+
+      sapphire = "#74C7EC",
+
+      blue = "#569cd6",
+
+      lavender = "#009AFF",
+
+      text = "#cbccc6",
+
       subtext1 = "#BAC2DE",
+
       subtext0 = "#A6ADC8",
+
       overlay2 = "#9399B2",
+
       overlay1 = "#7F849C",
+
       overlay0 = "#6C7086",
+
       surface2 = "#585B70",
-      surface1 = "#45475A",
+
+      surface1 = "#4d4d4d",
+
       surface0 = "#313244",
 
-      base = "#1E1E2E",
-      mantle = "#181825",
-      crust = "#11111B",
+      base = "#1e1e1e",
 
+      mantle = "#191919",
+
+      crust = "#11111B",
     }
   },
   integrations = {
