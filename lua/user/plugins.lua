@@ -44,9 +44,9 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-  --[[ use {'neoclide/coc.nvim', branch = 'release'} ]]
+
   -- Color Scheme
-  use "Shatur/neovim-ayu"
+  --[[ use "Shatur/neovim-ayu" ]]
   use("catppuccin/nvim")
   use 'norcalli/nvim-colorizer.lua'
 
@@ -61,7 +61,7 @@ return packer.startup(function(use)
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  --[[ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use ]]
 
 
   -- LSP
@@ -84,6 +84,7 @@ return packer.startup(function(use)
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
   use "nvim-treesitter/nvim-treesitter-context"
+  use "windwp/nvim-ts-autotag"
 
 
   --autopairs
@@ -117,6 +118,12 @@ return packer.startup(function(use)
 
   -- Markdown
   use('ixru/nvim-markdown')
+
+  -- Hop / Easy Motion
+  use("phaazon/hop.nvim")
+
+  -- Which Key
+ --[[ use("folke/which-key.nvim") ]]
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

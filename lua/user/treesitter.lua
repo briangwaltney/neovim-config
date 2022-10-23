@@ -1,5 +1,6 @@
 local configs = require("nvim-treesitter.configs")
 local contextConfig = require("treesitter-context")
+require('nvim-ts-autotag').setup()
 configs.setup {
   ensure_installed = "all",
   sync_install = false,
@@ -24,6 +25,9 @@ configs.setup {
     enable = true,
     enable_autocmd = false,
   },
+  autotag = {
+    enable = true
+  }
 }
 
 contextConfig.setup{

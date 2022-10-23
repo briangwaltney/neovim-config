@@ -3,17 +3,107 @@ if not cmp_status_ok then
   return
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
+local snip_status_ok, ls = pcall(require, "luasnip")
 if not snip_status_ok then
   return
 end
 
-require("luasnip/loaders/from_vscode").lazy_load()
 
 local check_backspace = function()
   local col = vim.fn.col "." - 1
   return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
+
+
+
+
+local s = ls.snippet
+local sn = ls.snippet_node
+local isn = ls.indent_snippet_node
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
+local c = ls.choice_node
+local d = ls.dynamic_node
+local r = ls.restore_node
+local events = require("luasnip.util.events")
+local ai = require("luasnip.nodes.absolute_indexer")
+local fmt = require("luasnip.extras.fmt").fmt
+local extras = require("luasnip.extras")
+local m = extras.m
+local l = extras.l
+local rep = extras.rep
+local postfix = require("luasnip.extras.postfix").postfix
+
+local function argPick(
+  args
+)
+  return args[1][1]
+end
+
+ls.add_snippets("all", {
+  s("ind", {
+    t('export * from "./'), i(1), t({ '";', 'export { default } from "./' }),
+    f(argPick, { 1 }),
+    t('";'),
+  }),
+
+  s("sfc", {
+    t({ 'import React from "react"', ' ', 'export default function ' }),
+    i(1), t({ ' (', }),
+    i(2), t({ ' ){', ' ', 'return (', '<div className="">' }), i(3), t({ '</div>', ')', '}' })
+  }),
+  s('cl', {
+    t('console.log("'), i(1), t('",'), i(2), t(')')
+  }),
+
+  s('res', {
+    t({ 'resolve: async ({ctx, input})=> {', }), i(0), t({ '}' })
+  }),
+
+  s('cbs', {
+    t({ 'onError: (err)=> { setSnack(err.message, "error")},', 'onSuccess: (data)=>{}' })
+  }),
+
+  s('formImports', {
+    t({ 'import {useForm} from "react-hook-form"', 'import {zodResolver} from "@hookform/resolvers/zod"',
+      'import {z} from "zod"', ' ', ' ', 'const formSchema = z.object({})',
+      ' ',
+      'type TFormSchema = z.infer<typeof formSchema>'
+
+    })
+  }),
+
+  s('useForm', {
+    t({ 'const form = useForm<TFormSchema>({', 'mode: "onBlur",', 'resolver: zodResolver(formSchema),', '})', ' ', ' ',
+      'const onSubmit = (values: TFormSchema)=> {', 'console.log(values)', '}', ' ', 'const errors = form.formState.errors;' })
+  })
+})
+
+
+
+--[[ const form = useForm<TFormSchema>({ ]]
+--[[   mode: "onBlur", ]]
+--[[   resolver: zodResolver(formSchema), ]]
+--[[ }); ]]
+
+
+--[[ import { useForm } from "react-hook-form"; ]]
+--[[ import { zodResolver } from "@hookform/resolvers/zod"; ]]
+--[[ import { z } from "zod"; ]]
+--[[]]
+--[[]]
+--[[ const formSchema = z.object({ ]]
+--[[ }); ]]
+--[[]]
+--[[ type TFormSchema = z.infer<typeof formSchema>; ]]
+
+
+
+
+
+
+
 
 --   פּ ﯟ   some other good icons
 local kind_icons = {
@@ -48,12 +138,12 @@ local kind_icons = {
 cmp.setup {
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body) -- For `luasnip` users.
+      ls.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
-		["<C-j>"] = cmp.mapping.select_next_item(),
+    ["<C-j>"] = cmp.mapping.select_next_item(),
     ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
@@ -68,10 +158,10 @@ cmp.setup {
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif luasnip.expandable() then
-        luasnip.expand()
-      elseif luasnip.expand_or_jumpable() then
-        luasnip.expand_or_jump()
+      elseif ls.expandable() then
+        ls.expand()
+      elseif ls.expand_or_jumpable() then
+        ls.expand_or_jump()
       elseif check_backspace() then
         fallback()
       else
@@ -84,8 +174,8 @@ cmp.setup {
     ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif luasnip.jumpable(-1) then
-        luasnip.jump(-1)
+      elseif ls.jumpable(-1) then
+        ls.jump(-1)
       else
         fallback()
       end
@@ -111,7 +201,7 @@ cmp.setup {
     end,
   },
   sources = {
-    {name = "nvim_lsp"},
+    { name = "nvim_lsp" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
@@ -120,12 +210,11 @@ cmp.setup {
     behavior = cmp.ConfirmBehavior.Replace,
     select = false,
   },
- window = {
-   documentation = cmp.config.window.bordered()
+  window = {
+    documentation = cmp.config.window.bordered()
   },
   experimental = {
     ghost_text = true,
     native_menu = false,
   },
 }
-

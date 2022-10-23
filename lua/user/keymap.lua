@@ -39,61 +39,54 @@ keymap("n", "<F7>", ":lua require('harpoon.ui').nav_file(7)<CR>", opts)
 keymap("n", "<leader>U", ":UndotreeToggle<CR>", opts)
 
 
+-- Hop
+keymap("n", "<leader>m", ":HopWord<CR>", opts)
+keymap("n", "<leader>d", ":HopPattern<CR>", opts)
+
 -- RSTD
 
-keymap("n", "f", "u", opts)
-keymap("n", "u", "a", opts)
-keymap("n", "U", "A", opts)
-keymap("n", "l", "i", opts)
-keymap("n", "L", "I", opts)
-keymap("x", "a", "j", opts)
-keymap("x", "i", "k", opts)
-keymap("x", "e", "l", opts)
-keymap("x", "n", "h", opts)
-keymap("v", "a", "j", opts)
-keymap("v", "i", "k", opts)
-keymap("v", "e", "l", opts)
-keymap("v", "n", "h", opts)
-keymap("n", "a", "j", opts)
-keymap("n", "i", "k", opts)
-keymap("n", "e", "l", opts)
-keymap("n", "n", "h", opts)
-
-
-keymap("n", "m", "n", opts)
-keymap("n", "M", "N", opts)
-
-
-
--- Dvorak improvements
-
-
---[[ keymap("x", "t", "j", opts) ]]
---[[  keymap("x", "c", "k", opts) ]]
---[[  keymap("x", "n", "l", opts) ]]
---[[  keymap("v", "t", "j", opts) ]]
---[[  keymap("v", "c", "k", opts) ]]
---[[  keymap("v", "n", "l", opts) ]]
---[[  keymap("n", "t", "j", opts) ]]
---[[  keymap("n", "c", "k", opts) ]]
---[[  keymap("n", "n", "l", opts) ]]
---[[  keymap("n", "<S-l>", "<S-n>", opts) ]]
+--[[ keymap("n", "f", "u", opts) ]]
+--[[ keymap("n", "u", "a", opts) ]]
+--[[ keymap("n", "U", "A", opts) ]]
+--[[ keymap("n", "l", "i", opts) ]]
+--[[ keymap("n", "L", "I", opts) ]]
+--[[ keymap("x", "a", "j", opts) ]]
+--[[ keymap("x", "i", "k", opts) ]]
+--[[ keymap("x", "e", "l", opts) ]]
+--[[ keymap("x", "n", "h", opts) ]]
+--[[ keymap("v", "a", "j", { noremap = true, silent = true, nowait = true }) ]]
+--[[ keymap("v", "i", "k", opts) ]]
+--[[ keymap("v", "e", "l", opts) ]]
+--[[ keymap("v", "n", "h", opts) ]]
+--[[ keymap("n", "a", "j", opts) ]]
+--[[ keymap("n", "i", "k", opts) ]]
+--[[ keymap("n", "e", "l", opts) ]]
+--[[ keymap("n", "n", "h", opts) ]]
 --[[]]
---[[ keymap("n", "j", "t", opts) ]]
---[[ keymap("n", "k", "c", opts) ]]
---[[ keymap("n", "l", "n", opts) ]]
---[[ keymap("v", "j", "t", opts) ]]
---[[ keymap("v", "k", "c", opts) ]]
---[[ keymap("v", "l", "n", opts) ]]
---[[ keymap("x", "j", "t", opts) ]]
---[[ keymap("x", "k", "c", opts) ]]
---[[ keymap("x", "l", "n", opts) ]]
 --[[]]
---[[ keymap("n", "kj", "ct", opts) ]]
---[[ keymap("n", "kk", "cc", opts) ]]
---[[ keymap("n", "ka", "ca", opts) ]]
---[[ keymap("n", "kp", "cp", opts) ]]
---[[ keymap("n", "<s-k>", "<s-c>", opts) ]]
+--[[ keymap("n", "m", "n", opts) ]]
+--[[ keymap("n", "M", "N", opts) ]]
+
+
+--[[ keymap("v", "aw", "<Nop>", opts) ]]
+--[[ keymap("v", "aW", "<Nop>", opts) ]]
+--[[ keymap("v", "as", "<Nop>", opts) ]]
+--[[ keymap("v", "ap", "<Nop>", opts) ]]
+--[[ keymap("v", "ab", "<Nop>", opts) ]]
+--[[ keymap("v", "aB", "<Nop>", opts) ]]
+--[[ keymap("v", "at", "<Nop>", opts) ]]
+--[[ keymap("v", "a<", "<Nop>", opts) ]]
+--[[ keymap("v", "a>", "<Nop>", opts) ]]
+--[[ keymap("v", "a[", "<Nop>", opts) ]]
+--[[ keymap("v", "a]", "<Nop>", opts) ]]
+--[[ keymap("v", "a\"", "<Nop>", opts) ]]
+--[[ keymap("v", "a(", "<Nop>", opts) ]]
+--[[ keymap("v", "a)", "<Nop>", opts) ]]
+--[[ keymap("v", "a{", "<Nop>", opts) ]]
+--[[ keymap("v", "a}", "<Nop>", opts) ]]
+
+
+
 
 -- Reload vim after config change
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
@@ -118,8 +111,8 @@ keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-e>", ":bnext<CR>", opts)
-keymap("n", "<S-n>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", ":bnext<CR>", opts)
+keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 
 -- Telescope

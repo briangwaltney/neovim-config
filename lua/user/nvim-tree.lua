@@ -14,17 +14,17 @@ end
 local tree_cb = nvim_tree_config.nvim_tree_callback
 
 nvim_tree.setup {
-  remove_keymaps = { "a" },
+  --[[ remove_keymaps = { "a" }, ]]
   view = {
 
     width = 45,
 
     mappings = {
       list = {
-        { key = { "n", "<CR>", "o" }, cb = tree_cb "edit" },
-        { key = "n", cb = tree_cb "close_node" },
-        { key = "e", cb = tree_cb "open_node" },
-        { key = "s", cb = tree_cb "create" },
+        { key = {"l",  "<CR>", "o" }, cb = tree_cb "edit" },
+        --[[ { key = "n", cb = tree_cb "close_node" }, ]]
+        --[[ { key = "e", cb = tree_cb "open_node" }, ]]
+        --[[ { key = "s", cb = tree_cb "create" }, ]]
       },
     },
   },
