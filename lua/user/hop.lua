@@ -6,5 +6,4 @@ end
 
 hop.setup{
   keys = 'naemhtsdliufycxwpgv',
-
 }

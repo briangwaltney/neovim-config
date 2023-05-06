@@ -20,6 +20,8 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 keymap("n", "<leader>'", ":TSHighlightCapturesUnderCursor<CR>", opts)
+keymap("n", "{", "<C-u>", opts)
+keymap("n", "}", "<C-d>", opts)
 keymap("n", "<ESC>", "<ESC>:w<CR>", opts)
 keymap("n", "<leader>w", ":bd<CR>", opts)
 keymap("n", "0", "^", opts)
@@ -27,13 +29,16 @@ keymap("n", "0", "^", opts)
 -- Harpoontang
 keymap("n", "<leader>0", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 keymap("n", "<leader>9", ":lua require('harpoon.mark').add_file()<CR>", opts)
-keymap("n", "<F1>", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
-keymap("n", "<F2>", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
-keymap("n", "<F3>", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
-keymap("n", "<F4>", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
-keymap("n", "<F5>", ":lua require('harpoon.ui').nav_file(5)<CR>", opts)
-keymap("n", "<F6>", ":lua require('harpoon.ui').nav_file(6)<CR>", opts)
-keymap("n", "<F7>", ":lua require('harpoon.ui').nav_file(7)<CR>", opts)
+keymap("n", "<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
+keymap("n", "<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
+keymap("n", "<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
+keymap("n", "<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
+keymap("n", "<leader>5", ":lua require('harpoon.ui').nav_file(5)<CR>", opts)
+keymap("n", "<leader>6", ":lua require('harpoon.ui').nav_file(6)<CR>", opts)
+keymap("n", "<leader>6", ":lua require('harpoon.ui').nav_file(7)<CR>", opts)
+
+-- copilot
+keymap("i", "<S-tab>", ":copilot#Accept<CR>", opts)
 
 -- Undotree
 keymap("n", "<leader>U", ":UndotreeToggle<CR>", opts)
@@ -43,54 +48,10 @@ keymap("n", "<leader>U", ":UndotreeToggle<CR>", opts)
 keymap("n", "<leader>m", ":HopWord<CR>", opts)
 keymap("n", "<leader>d", ":HopPattern<CR>", opts)
 
--- RSTD
-
---[[ keymap("n", "f", "u", opts) ]]
---[[ keymap("n", "u", "a", opts) ]]
---[[ keymap("n", "U", "A", opts) ]]
---[[ keymap("n", "l", "i", opts) ]]
---[[ keymap("n", "L", "I", opts) ]]
---[[ keymap("x", "a", "j", opts) ]]
---[[ keymap("x", "i", "k", opts) ]]
---[[ keymap("x", "e", "l", opts) ]]
---[[ keymap("x", "n", "h", opts) ]]
---[[ keymap("v", "a", "j", { noremap = true, silent = true, nowait = true }) ]]
---[[ keymap("v", "i", "k", opts) ]]
---[[ keymap("v", "e", "l", opts) ]]
---[[ keymap("v", "n", "h", opts) ]]
---[[ keymap("n", "a", "j", opts) ]]
---[[ keymap("n", "i", "k", opts) ]]
---[[ keymap("n", "e", "l", opts) ]]
---[[ keymap("n", "n", "h", opts) ]]
---[[]]
---[[]]
---[[ keymap("n", "m", "n", opts) ]]
---[[ keymap("n", "M", "N", opts) ]]
-
-
---[[ keymap("v", "aw", "<Nop>", opts) ]]
---[[ keymap("v", "aW", "<Nop>", opts) ]]
---[[ keymap("v", "as", "<Nop>", opts) ]]
---[[ keymap("v", "ap", "<Nop>", opts) ]]
---[[ keymap("v", "ab", "<Nop>", opts) ]]
---[[ keymap("v", "aB", "<Nop>", opts) ]]
---[[ keymap("v", "at", "<Nop>", opts) ]]
---[[ keymap("v", "a<", "<Nop>", opts) ]]
---[[ keymap("v", "a>", "<Nop>", opts) ]]
---[[ keymap("v", "a[", "<Nop>", opts) ]]
---[[ keymap("v", "a]", "<Nop>", opts) ]]
---[[ keymap("v", "a\"", "<Nop>", opts) ]]
---[[ keymap("v", "a(", "<Nop>", opts) ]]
---[[ keymap("v", "a)", "<Nop>", opts) ]]
---[[ keymap("v", "a{", "<Nop>", opts) ]]
---[[ keymap("v", "a}", "<Nop>", opts) ]]
-
-
-
 
 -- Reload vim after config change
 vim.cmd('command! ReloadConfig lua ReloadConfig()')
-keymap('n', '<Leader>@', '<Cmd>lua ReloadConfig()<CR>', opts)
+keymap('n', '<Leader>22', '<Cmd>lua ReloadConfig()<CR>', opts)
 
 -- better explorer size
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -118,8 +79,11 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Telescope
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
-keymap("n", "==", ":Format<CR>", opts)
-keymap("n", "<leader>==", ":Prettier<CR>", opts)
+keymap("n", "<leader>z", ":Telescope grep_string<CR>", opts)
+keymap("v", "<leader>f", ":Telescope find_files<CR>", opts)
+keymap("v", "<leader>t", ":Telescope live_grep<CR>", opts)
+keymap("v", "<leader>z", ":Telescope grep_string<CR>", opts)
+keymap("n", "==", ":Prettier<CR>", opts)
 
 
 -- Insert --
@@ -132,14 +96,6 @@ keymap("v", "<leader>fl", ":'<,'>fold<CR>", opts)
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
--- Move text up and down
---[[ keymap("v", "<A-j>", ":m .+1<CR>==", opts) ]]
---[[ keymap("v", "<A-k>", ":m .-2<CR>==", opts) ]]
-
--- Visual Block --
--- Move text up and down
---[[ keymap("x", "J", ":move '>+1<CR>gv-gv", opts) ]]
---[[ keymap("x", "K", ":move '<-2<CR>gv-gv", opts) ]]
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 

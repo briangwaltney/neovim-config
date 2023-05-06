@@ -40,14 +40,15 @@ packer.init {
 
 -- Install your plugins here
 return packer.startup(function(use)
-  -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
+  use "github/copilot.vim"
+
   -- Color Scheme
-  --[[ use "Shatur/neovim-ayu" ]]
-  use("catppuccin/nvim")
+  use "Shatur/neovim-ayu"
+  use "catppuccin/nvim"
   use 'norcalli/nvim-colorizer.lua'
 
   -- cmp plugins
@@ -64,9 +65,26 @@ return packer.startup(function(use)
   --[[ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use ]]
 
 
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+use {
+  'VonHeikemen/lsp-zero.nvim',
+  branch = 'v2.x',
+  requires = {
+    -- LSP Support
+    {'neovim/nvim-lspconfig'},             -- Required
+    {                                      -- Optional
+      'williamboman/mason.nvim',
+      run = function()
+        pcall(vim.cmd, 'MasonUpdate')
+      end,
+    },
+    {'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+    -- Autocompletion
+    {'hrsh7th/nvim-cmp'},     -- Required
+    {'hrsh7th/cmp-nvim-lsp'}, -- Required
+    {'L3MON4D3/LuaSnip'},     -- Required
+  }
+}
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -121,6 +139,9 @@ return packer.startup(function(use)
 
   -- Hop / Easy Motion
   use("phaazon/hop.nvim")
+
+  -- Vim be good
+  use("ThePrimeagen/vim-be-good")
 
   -- Which Key
  --[[ use("folke/which-key.nvim") ]]

@@ -18,22 +18,9 @@ end
 
 
 local s = ls.snippet
-local sn = ls.snippet_node
-local isn = ls.indent_snippet_node
 local t = ls.text_node
 local i = ls.insert_node
 local f = ls.function_node
-local c = ls.choice_node
-local d = ls.dynamic_node
-local r = ls.restore_node
-local events = require("luasnip.util.events")
-local ai = require("luasnip.nodes.absolute_indexer")
-local fmt = require("luasnip.extras.fmt").fmt
-local extras = require("luasnip.extras")
-local m = extras.m
-local l = extras.l
-local rep = extras.rep
-local postfix = require("luasnip.extras.postfix").postfix
 
 local function argPick(
   args
@@ -49,9 +36,11 @@ ls.add_snippets("all", {
   }),
 
   s("sfc", {
-    t({ 'import React from "react"', ' ', 'export default function ' }),
-    i(1), t({ ' (', }),
-    i(2), t({ ' ){', ' ', 'return (', '<div className="">' }), i(3), t({ '</div>', ')', '}' })
+    t({ 'import React from "react"', ' ', 'const ' }),
+    i(1), t('= ('), i(2), t(') => {'),
+    t({" ", "return <div className=''>"}), i(3), t("</div>"),
+    t({'}', " ", "export default "}),
+    f(argPick, {1})
   }),
   s('cl', {
     t('console.log("'), i(1), t('",'), i(2), t(')')
@@ -74,38 +63,14 @@ ls.add_snippets("all", {
     })
   }),
 
-  s('useForm', {
+  s('formUse', {
     t({ 'const form = useForm<TFormSchema>({', 'mode: "onBlur",', 'resolver: zodResolver(formSchema),', '})', ' ', ' ',
-      'const onSubmit = (values: TFormSchema)=> {', 'console.log(values)', '}', ' ', 'const errors = form.formState.errors;' })
+      'const onSubmit = (values: TFormSchema)=> {', 'console.log(values)', '}', ' ',
+      'const errors = form.formState.errors;' })
   })
 })
 
 
-
---[[ const form = useForm<TFormSchema>({ ]]
---[[   mode: "onBlur", ]]
---[[   resolver: zodResolver(formSchema), ]]
---[[ }); ]]
-
-
---[[ import { useForm } from "react-hook-form"; ]]
---[[ import { zodResolver } from "@hookform/resolvers/zod"; ]]
---[[ import { z } from "zod"; ]]
---[[]]
---[[]]
---[[ const formSchema = z.object({ ]]
---[[ }); ]]
---[[]]
---[[ type TFormSchema = z.infer<typeof formSchema>; ]]
-
-
-
-
-
-
-
-
---   פּ ﯟ   some other good icons
 local kind_icons = {
   Text = "",
   Method = "m",
@@ -141,6 +106,7 @@ cmp.setup {
       ls.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
+
   mapping = {
     ["<C-k>"] = cmp.mapping.select_prev_item(),
     ["<C-j>"] = cmp.mapping.select_next_item(),
@@ -155,41 +121,40 @@ cmp.setup {
     -- Accept currently selected item. If none selected, `select` first item.
     -- Set `select` to `false` to only confirm explicitly selected items.
     ["<CR>"] = cmp.mapping.confirm { select = true },
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif ls.expandable() then
-        ls.expand()
-      elseif ls.expand_or_jumpable() then
-        ls.expand_or_jump()
-      elseif check_backspace() then
-        fallback()
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      elseif ls.jumpable(-1) then
-        ls.jump(-1)
-      else
-        fallback()
-      end
-    end, {
-      "i",
-      "s",
-    }),
+    --[[ ["<Tab>"] = cmp.mapping(function(fallback) ]]
+    --[[   if cmp.visible() then ]]
+    --[[     cmp.select_next_item() ]]
+    --[[   elseif ls.expandable() then ]]
+    --[[     ls.expand() ]]
+    --[[   elseif ls.expand_or_jumpable() then ]]
+    --[[     ls.expand_or_jump() ]]
+    --[[   elseif check_backspace() then ]]
+    --[[     fallback() ]]
+    --[[   else ]]
+    --[[     fallback() ]]
+    --[[   end ]]
+    --[[ end, { ]]
+    --[[   "i", ]]
+    --[[   "s", ]]
+    --[[ }), ]]
+    --[[ ["<S-Tab>"] = cmp.mapping(function(fallback) ]]
+    --[[   if cmp.visible() then ]]
+    --[[     cmp.select_prev_item() ]]
+    --[[   elseif ls.jumpable(-1) then ]]
+    --[[     ls.jump(-1) ]]
+    --[[   else ]]
+    --[[     fallback() ]]
+    --[[   end ]]
+    --[[ end, { ]]
+    --[[   "i", ]]
+    --[[   "s", ]]
+    --[[ }), ]]
   },
   formatting = {
-    fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
       vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
-      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+    --[[ vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind ]]
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
         nvim_lua = "[NVIM_LUA]",
@@ -206,10 +171,10 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
   },
-  confirm_opts = {
-    behavior = cmp.ConfirmBehavior.Replace,
-    select = false,
-  },
+  --[[ confirm_opts = { ]]
+  --[[   behavior = cmp.ConfirmBehavior.Replace, ]]
+  --[[   select = false, ]]
+  --[[ }, ]]
   window = {
     documentation = cmp.config.window.bordered()
   },

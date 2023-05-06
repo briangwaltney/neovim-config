@@ -14,14 +14,8 @@ M.setup = function()
 
   local config = {
     -- disable virtual text
-    --[[ virtual_text = false, ]]
+    virtual_text = false,
 
-    virtual_text = {
-      errors = { "italic" },
-      hints = { "italic" },
-      warnings = { "italic" },
-      information = { "italic" },
-    },
     -- show signs
     signs = {
       active = signs,
