@@ -1,16 +1,14 @@
 require("catppuccin").setup({
   flavor = "latte",
   highlight_overrides = {
-    all = function (colors)
+    all = function(colors)
       return {
-      LineNr = { fg = '#FAB387' },
-      LineNrAbove = { fg = colors.surface1 },
-      LineNrBelow = { fg = colors.surface1 },
+        LineNr = { fg = '#FAB387' },
+        LineNrAbove = { fg = colors.surface1 },
+        LineNrBelow = { fg = colors.surface1 },
       }
-
     end
-
-    },
+  },
   color_overrides = {
     latte = {
       rosewater = "#F5E0DC",
@@ -50,7 +48,7 @@ require("catppuccin").setup({
     ts_rainbow = true,
     treesitter_context = true,
   }
-  }
+}
 )
 
-vim.cmd.colorscheme "catppuccin-latte"
+vim.cmd.colorscheme("catppuccin-latte")

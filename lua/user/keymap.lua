@@ -20,11 +20,17 @@ vim.g.maplocalleader = " "
 
 -- Normal --
 keymap("n", "<leader>'", ":TSHighlightCapturesUnderCursor<CR>", opts)
-keymap("n", "{", "<C-u>", opts)
-keymap("n", "}", "<C-d>", opts)
+keymap("n", "{", "<C-u>zz", opts)
+keymap("n", "}", "<C-d>zz", opts)
 keymap("n", "<ESC>", "<ESC>:w<CR>", opts)
 keymap("n", "<leader>w", ":bd<CR>", opts)
 keymap("n", "0", "^", opts)
+keymap("n", "U", "<C-r>", opts)
+keymap("n", "J", "mzJ`z", opts)
+keymap("n", "n", "nzzzv", opts)
+keymap("n", "N", "nzzzv", opts)
+
+
 
 -- Harpoontang
 keymap("n", "<leader>0", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
@@ -37,16 +43,12 @@ keymap("n", "<leader>5", ":lua require('harpoon.ui').nav_file(5)<CR>", opts)
 keymap("n", "<leader>6", ":lua require('harpoon.ui').nav_file(6)<CR>", opts)
 keymap("n", "<leader>6", ":lua require('harpoon.ui').nav_file(7)<CR>", opts)
 
--- copilot
-keymap("i", "<S-tab>", ":copilot#Accept<CR>", opts)
-
 -- Undotree
 keymap("n", "<leader>U", ":UndotreeToggle<CR>", opts)
 
 
 -- Hop
 keymap("n", "<leader>m", ":HopWord<CR>", opts)
-keymap("n", "<leader>d", ":HopPattern<CR>", opts)
 
 
 -- Reload vim after config change
@@ -58,6 +60,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- clear search
 keymap("n", "<leader>/", ":noh<CR>", opts)
+
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
@@ -80,6 +83,7 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>t", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>z", ":Telescope grep_string<CR>", opts)
+keymap("n", "<leader>dl", ":Telescope diagnostics<CR>", opts)
 keymap("v", "<leader>f", ":Telescope find_files<CR>", opts)
 keymap("v", "<leader>t", ":Telescope live_grep<CR>", opts)
 keymap("v", "<leader>z", ":Telescope grep_string<CR>", opts)

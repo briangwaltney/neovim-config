@@ -44,12 +44,14 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-  use "github/copilot.vim"
 
   -- Color Scheme
   use "Shatur/neovim-ayu"
-  use "catppuccin/nvim"
+  use {"catppuccin/nvim", as = "catppuccin"}
   use 'norcalli/nvim-colorizer.lua'
+
+  use "zbirenbaum/copilot.lua"
+  use "zbirenbaum/copilot-cmp"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -62,7 +64,6 @@ return packer.startup(function(use)
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
-  --[[ use "rafamadriz/friendly-snippets" -- a bunch of snippets to use ]]
 
 
 use {
@@ -121,8 +122,7 @@ use {
 
   -- bufferline
 
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
   -- prettier
   use('jose-elias-alvarez/null-ls.nvim')
@@ -138,7 +138,7 @@ use {
   use('ixru/nvim-markdown')
 
   -- Hop / Easy Motion
-  use("phaazon/hop.nvim")
+  --[[ use("phaazon/hop.nvim") ]]
 
   -- Vim be good
   use("ThePrimeagen/vim-be-good")
