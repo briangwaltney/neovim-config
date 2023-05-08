@@ -94,7 +94,7 @@ local kind_icons = {
 cmp.setup {
   snippet = {
     expand = function(args)
-      ls.lsp_expand(args.body) 
+      ls.lsp_expand(args.body)
     end,
   },
 
@@ -124,7 +124,7 @@ cmp.setup {
     documentation = cmp.config.window.bordered()
   },
   experimental = {
-    ghost_text = true,
+    ghost_text = false,
     native_menu = false,
   },
 }

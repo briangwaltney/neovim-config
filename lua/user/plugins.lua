@@ -48,7 +48,6 @@ return packer.startup(function(use)
   -- Color Scheme
   use "Shatur/neovim-ayu"
   use {"catppuccin/nvim", as = "catppuccin"}
-  use 'norcalli/nvim-colorizer.lua'
 
   use "zbirenbaum/copilot.lua"
   use "zbirenbaum/copilot-cmp"
@@ -137,14 +136,8 @@ use {
   -- Markdown
   use('ixru/nvim-markdown')
 
-  -- Hop / Easy Motion
-  --[[ use("phaazon/hop.nvim") ]]
-
   -- Vim be good
   use("ThePrimeagen/vim-be-good")
-
-  -- Which Key
- --[[ use("folke/which-key.nvim") ]]
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

@@ -46,9 +46,7 @@ keymap("n", "<leader>6", ":lua require('harpoon.ui').nav_file(7)<CR>", opts)
 -- Undotree
 keymap("n", "<leader>U", ":UndotreeToggle<CR>", opts)
 
-
--- Hop
-keymap("n", "<leader>m", ":HopWord<CR>", opts)
+keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
 
 
 -- Reload vim after config change

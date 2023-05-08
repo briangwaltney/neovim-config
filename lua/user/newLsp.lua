@@ -15,6 +15,12 @@ cmp.setup({
         fallback()
       end
     end,
+    ["<C-f>"] = function()
+      if cmp.visible() then
+        return cmp.close()
+      end
+      cmp.complete()
+    end,
   }
 })
 

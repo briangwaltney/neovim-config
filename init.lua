@@ -1,7 +1,7 @@
+require "user.plugins"
 require "user.options"
 require "user.keymap"
 require "user.comment"
-require "user.plugins"
 require "user.newLsp"
 require "user.cmp"
 require "user.telescope"

@@ -114,11 +114,11 @@ nvim_tree.setup {
       enable = true,
       inline_arrows = true,
       icons = {
-        corner = "└",
-        edge = "│",
-        item = "│",
-        bottom = "─",
-        none = " ",
+        corner = "",
+        edge = "",
+        item = "",
+        bottom = "",
+        none = "",
       },
     }
   },
